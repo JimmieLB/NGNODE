@@ -56,6 +56,7 @@ ws.onmessage = async ({data}) => {
         await pc.setLocalDescription(answer);
         ws.send(JSON.stringify(pc.localDescription));
     } else if (message.type === 'answer') {
+        console.log("Answer received");
         await pc.setRemoteDescription(message);
     } else if (message.type === 'candidate') {
         await pc.addIceCandidate(message.candidate);

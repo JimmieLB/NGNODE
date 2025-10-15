@@ -64,6 +64,7 @@ ws.on('connection', (socket) => {
             socket.send(JSON.stringify(pc.localDescription));
             console.log("Answer sent");
         } else if (message.type === 'answer') {
+            console.log("Answer Received");
             await pc.setRemoteDescription(message);
         } else if (message.type === 'candidate') {
             await pc.addIceCandidate(message.candidate);
