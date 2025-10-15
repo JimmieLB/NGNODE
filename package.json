@@ -1,0 +1,17 @@
+{
+  "name": "ngrtcnode",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "pi-camera-connect": "^0.3.4",
+    "wrtc": "^0.4.7",
+    "ws": "^8.18.3"
+  }
+}
