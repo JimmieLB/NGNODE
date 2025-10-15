@@ -2,7 +2,7 @@ import dgram from 'dgram';
 const server = dgram.createSocket('udp4');
 const PORT = 5432;
 
-clients = {};
+const clients = {};
 
 server.on('error', (err) => {
   console.error(`server error:\n${err.stack}`);
