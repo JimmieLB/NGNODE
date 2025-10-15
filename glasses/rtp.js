@@ -1,8 +1,22 @@
 import dgram from 'dgram';
+import { StreamCamera, Codec } from 'pi-camera-connect';
 const server = dgram.createSocket('udp4');
 const PORT = 5432;
 
 const clients = {};
+
+const streamCamera = new StreamCamera({
+    codec: Codec.H264,
+});
+
+
+const videoStream = streamCamera.createStream();
+streamCamera.startCapture().then(()=>{
+    console.log("Camera Started");
+})
+
+videoStream.on('data', data => console.log('New video data', data));
+
 
 server.on('error', (err) => {
   console.error(`server error:\n${err.stack}`);
